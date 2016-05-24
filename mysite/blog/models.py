@@ -12,6 +12,9 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    def is_published(self):
+        return self.published_date is None
+    
     def __str__(self):
         return self.title
 
